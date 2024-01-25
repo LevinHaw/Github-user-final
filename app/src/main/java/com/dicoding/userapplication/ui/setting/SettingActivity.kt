@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.CompoundButton
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.lifecycle.ViewModelProvider
+import com.dicoding.userapplication.R
 import com.dicoding.userapplication.databinding.ActivitySettingBinding
 import com.dicoding.userapplication.viewmodel.SettingViewModel
 import com.dicoding.userapplication.viewmodel.SettingViewModelFactory
@@ -19,7 +20,7 @@ class SettingActivity : AppCompatActivity() {
         binding = ActivitySettingBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        supportActionBar?.title = "Setting"
+        supportActionBar?.title = getString(R.string.menu_2)
 
         val pref = SettingPreference.getInstance(application.dataStore)
         val settingViewModel = ViewModelProvider(this, SettingViewModelFactory(pref)).get(
