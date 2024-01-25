@@ -34,8 +34,6 @@ class SplashScreenActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
 
-        val splashScreenTimeOut: Long = 3000
-
         Handler(Looper.myLooper() ?: return).postDelayed({
             goToMainActivity()
         }, splashScreenTimeOut)
@@ -45,5 +43,9 @@ class SplashScreenActivity : AppCompatActivity() {
         val mainActivityIntent = Intent(this@SplashScreenActivity, MainActivity::class.java)
         startActivity(mainActivityIntent)
         finish()
+    }
+
+    companion object {
+        const val splashScreenTimeOut: Long = 3000
     }
 }
